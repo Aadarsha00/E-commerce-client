@@ -1,5 +1,5 @@
 // Page.tsx
-import FormLogin from "@/components/login/formLogin";
+import FormLogin from "@/components/auth/formLogin";
 import Link from "next/link";
 
 const Page = () => {

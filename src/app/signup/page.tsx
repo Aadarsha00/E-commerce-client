@@ -1,4 +1,4 @@
-import FormSignup from "@/components/signup/formSignup";
+import FormSignup from "@/components/auth/formSignup";
 import React from "react";
 import Link from "next/link";
 

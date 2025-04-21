@@ -1,10 +1,14 @@
-import ProductCard from "@/components/product/product-card";
+import Hero from "@/components/home/hero";
+import SummerSale from "@/components/home/productList/summerSale";
+
+import TrendingProduct from "@/components/home/productList/trendingProduct";
 
 export default function Home() {
   return (
     <main>
-      Home Page
-      <ProductCard />;
+      <Hero />
+      <TrendingProduct />
+      <SummerSale />
     </main>
   );
 }
