@@ -46,7 +46,7 @@ const LoginForm = () => {
       router.replace("/");
     },
     onError: () => {
-      toast.error("Login Failed");
+      toast.error(error?.message || "Login failed");
     },
   });
 

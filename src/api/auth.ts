@@ -3,9 +3,13 @@ import api from "@/axios/api.axios";
 import { ILogin } from "@/interface/auth/auth.interface";
 
 export const login = async (data: ILogin) => {
-  const response = await api.post("/user/login", data);
-  console.log(response);
-  return response.data;
+  try {
+    const response = await api.post("/user/login", data);
+    console.log(response);
+    return response.data;
+  } catch (error: any) {
+    throw error?.response?.data || "Login failed";
+  }
 };
 
 export const signUP = async (data: any) => {
@@ -14,6 +18,6 @@ export const signUP = async (data: any) => {
     console.log(response);
     return response;
   } catch (error: any) {
-    throw error?.response?.data;
+    throw error?.response?.data || "Signup failed";
   }
 };
