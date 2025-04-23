@@ -168,7 +168,7 @@ const Header = () => {
                   <span>Wishlist</span>
                 </Link>
                 <Link
-                  href="/add-to-cart"
+                  href="/cart"
                   className="flex items-center gap-2 text-gray-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
