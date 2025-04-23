@@ -6,6 +6,7 @@ import Link from "next/link";
 
 interface IProp {
   product: IProduct;
+  wishList?: boolean;
 }
 
 const ProductCard: React.FC<IProp> = ({ product }) => {

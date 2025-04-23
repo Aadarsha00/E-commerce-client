@@ -2,9 +2,9 @@ import ProductDetails from "@/components/product/product-details.tsx";
 import React from "react";
 
 interface IProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 const Page: React.FC<IProps> = async ({ params }) => {
   const { id } = await params;

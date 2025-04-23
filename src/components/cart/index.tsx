@@ -15,6 +15,7 @@ const Index = () => {
     queryKey: ["get-cart-items"],
     queryFn: () => getCart(),
   });
+  console.log(data);
 
   //handle item removal
   const { mutate: removeItem } = useMutation({

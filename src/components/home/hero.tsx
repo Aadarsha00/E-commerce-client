@@ -23,7 +23,7 @@ const Hero = () => {
             </h1>
             <p className="text-lg md:text-xl font-medium leading-relaxed drop-shadow-md">
               Shop the latest trends in fashion, electronics, and more — all in
-              one place. Quality you trust, prices you'll love.
+              one place. Quality you trust, prices you will love.
             </p>
           </div>
           <div className="flex justify-start mt-8">
