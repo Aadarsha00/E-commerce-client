@@ -50,8 +50,8 @@ const FormSignup = () => {
       console.log(error);
       router.replace("/login");
     },
-    onError: () => {
-      toast.error("Login Failed");
+    onError: (error) => {
+      toast.error(error?.message || "Failed to signup");
     },
   });
 

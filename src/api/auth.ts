@@ -9,7 +9,11 @@ export const login = async (data: ILogin) => {
 };
 
 export const signUP = async (data: any) => {
-  const response = await api.post("/user/", data);
-  console.log(response);
-  return response;
+  try {
+    const response = await api.post("/user/", data);
+    console.log(response);
+    return response;
+  } catch (error: any) {
+    throw error?.response?.data;
+  }
 };
