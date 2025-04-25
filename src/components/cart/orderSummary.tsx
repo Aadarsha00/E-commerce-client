@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const OrderSummary = ({ total }: { total: number }) => {
+  const router = useRouter();
   return (
     <div className="w-full lg:w-1/3">
       <div className="bg-white rounded-lg shadow-sm p-6">
@@ -19,7 +21,12 @@ const OrderSummary = ({ total }: { total: number }) => {
           <span>Total</span>
           <span>रु.{total}</span>
         </div>
-        <button className="w-full py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-300">
+        <button
+          onClick={() => {
+            router.push("/checkout");
+          }}
+          className="w-full py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-300"
+        >
           Proceed to Checkout
         </button>
         <div className="mt-4">
