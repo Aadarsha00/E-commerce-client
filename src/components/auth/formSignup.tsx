@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { ISignup } from "@/interface/auth/auth.interface";
@@ -50,7 +51,7 @@ const FormSignup = () => {
       console.log(error);
       router.replace("/login");
     },
-    onError: (error) => {
+    onError: (error: any) => {
       toast.error(error?.message || "Failed to signup");
     },
   });

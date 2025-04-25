@@ -8,7 +8,7 @@ export const login = async (data: ILogin) => {
     console.log(response);
     return response.data;
   } catch (error: any) {
-    throw error?.response?.data || "Login failed";
+    throw error?.response?.data;
   }
 };
 
@@ -18,6 +18,6 @@ export const signUP = async (data: any) => {
     console.log(response);
     return response;
   } catch (error: any) {
-    throw error?.response?.data || "Signup failed";
+    throw error?.response?.data;
   }
 };

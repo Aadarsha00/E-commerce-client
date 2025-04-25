@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // FormLogin.tsx
 "use client";
 
@@ -34,7 +35,7 @@ const LoginForm = () => {
     mutationFn: login,
     onSuccess: (response) => {
       console.log("response", response);
-      toast.success("Login sucecssfull");
+      toast.success("Login successful");
       if (response.user) {
         localStorage.setItem("user", JSON.stringify(response.user));
         setUser(response.user);
@@ -45,7 +46,7 @@ const LoginForm = () => {
       Cookies.set("access_token", response.token);
       router.replace("/");
     },
-    onError: () => {
+    onError: (error: any) => {
       toast.error(error?.message || "Login failed");
     },
   });
