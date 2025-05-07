@@ -1,8 +1,12 @@
-import TrendingProduct from "@/components/home/productList/trendingProduct";
+import AllProducts from "@/components/all-products";
 import React from "react";
 
 const Page = () => {
-  return <TrendingProduct />;
+  return (
+    <div>
+      <AllProducts />
+    </div>
+  );
 };
 
 export default Page;

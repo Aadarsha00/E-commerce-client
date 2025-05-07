@@ -96,10 +96,10 @@ const Wishlist = () => {
               <ProductCard product={item} wishList={true} />
               <button
                 onClick={() => handleRemoval(item._id)}
-                className="absolute bottom-12 left-0 right-0 bg-red-500 text-white py-2 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+                className="absolute top-3 right-3 bg-red-500 text-white p-1.5 rounded-full shadow-md z-10 hover:bg-red-600 transition-colors"
+                aria-label="Remove from wishlist"
               >
-                <Trash className="mr-2 w-4 h-4" />
-                Remove
+                <Trash className="w-4 h-4" />
               </button>
             </div>
           );

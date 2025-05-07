@@ -25,7 +25,7 @@ const ProductList: React.FC<IProp> = ({
 
       {/* if data  */}
       {!isLoading && products.length > 0 && (
-        <div className="flex gap-4 my-2 flex-wrap">
+        <div className="flex gap-13 my-2 flex-wrap">
           {products?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}

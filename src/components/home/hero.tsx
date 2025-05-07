@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-const Hero = () => {
+interface IHero {
+  onClickShopNow: () => void;
+}
+
+const Hero: React.FC<IHero> = ({ onClickShopNow }) => {
   return (
     <div className="relative tracking-wider min-h-screen w-full">
       <div className="min-h-screen w-full">
@@ -27,7 +31,10 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex justify-start mt-8">
-            <button className="cursor-pointer transition-all duration-300 px-6 py-4 bg-blue-600 hover:bg-blue-700 uppercase text-white rounded-md font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button
+              onClick={onClickShopNow}
+              className="cursor-pointer transition-all duration-300 px-6 py-4 bg-blue-600 hover:bg-blue-700 uppercase text-white rounded-md font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
               Shop Now
             </button>
           </div>
