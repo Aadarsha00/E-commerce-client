@@ -2,7 +2,9 @@
 export interface IProduct {
   _id: string;
   productName: string;
-  coverImage: string;
+  coverImage: {
+    path: string;
+  };
   images: string[];
   averageRating: number;
   createdBy?: any;

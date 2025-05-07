@@ -35,11 +35,7 @@ const ItemsDetails = ({ items, onRemoveItem, onClearCart }: any) => {
                   <Image
                     height={80}
                     width={80}
-                    src={
-                      item.product.coverImage
-                        ? `${process.env.NEXT_PUBLIC_API_BASE_URL}${item.product.coverImage}`
-                        : "/public/product/product.webp"
-                    }
+                    src={item.product.coverImage.path}
                     alt={item.product.productName}
                     className="w-full h-full object-cover"
                   />

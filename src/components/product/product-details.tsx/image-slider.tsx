@@ -4,8 +4,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+
+interface IImageType {
+  path: string;
+}
 interface IProps {
-  images: string[];
+  images: IImageType[];
 }
 
 const ImageSlider: React.FC<IProps> = ({ images }) => {
@@ -30,7 +34,7 @@ const ImageSlider: React.FC<IProps> = ({ images }) => {
             <div key={index} className="h-full w-full">
               <Image
                 className="h-full w-full"
-                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${image}`}
+                src={image?.path}
                 width={1000}
                 height={1000}
                 alt={"product detail image"}
