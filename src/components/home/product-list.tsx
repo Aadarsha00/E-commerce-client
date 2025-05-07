@@ -9,7 +9,7 @@ interface IProp {
 }
 
 const ProductList: React.FC<IProp> = ({
-  title = "Most Sale",
+  title,
   products,
   isLoading = false,
 }) => {
