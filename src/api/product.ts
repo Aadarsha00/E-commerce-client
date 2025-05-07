@@ -19,3 +19,21 @@ export const getProductsById = async (id: string) => {
     throw error?.response?.data;
   }
 };
+
+export const getTrendingProduct = async (data: any) => {
+  try {
+    const response = await api.get("/product/trendingproducts", data);
+    return response.data;
+  } catch (error: any) {
+    throw error?.response?.data;
+  }
+};
+
+export const getSummerSale = async (data: any) => {
+  try {
+    const response = await api.get("product/summersale", data);
+    return response.data;
+  } catch (error: any) {
+    throw error?.response?.data;
+  }
+};

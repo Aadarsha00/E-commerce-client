@@ -2,13 +2,13 @@
 import React, { useEffect } from "react";
 import ProductList from "../product-list";
 import { useQuery } from "@tanstack/react-query";
-import { getAllProducts } from "@/api/product";
+import { getTrendingProduct } from "@/api/product";
 import toast from "react-hot-toast";
 
 const TrendingProduct = () => {
   const { isPending, isError, data, error } = useQuery({
     queryKey: ["trending-products"],
-    queryFn: getAllProducts,
+    queryFn: getTrendingProduct,
   });
   console.log("trending", data);
   useEffect(() => {

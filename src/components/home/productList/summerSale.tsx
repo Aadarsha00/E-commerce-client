@@ -1,32 +1,39 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import ProductList from "../product-list";
-const products = [
-  {
-    _id: "1",
-    coverImage: "/product/product.webp",
-    productName: "Speaker",
-    productPrice: 230,
-  },
-  {
-    _id: "2",
-    coverImage: "/product/product.webp",
-    productName: "Trending Products",
-    productPrice: 230,
-  },
-  {
-    _id: "3",
-    coverImage: "/product/product.webp",
-    productName: "Trending Products",
-    productPrice: 230,
-  },
-];
+import { useQuery } from "@tanstack/react-query";
+import { getSummerSale } from "@/api/product";
+import toast from "react-hot-toast";
 
-const SummerSale = () => {
+const TrendingProduct = () => {
+  const { isPending, isError, data, error } = useQuery({
+    queryKey: ["summer-sale"],
+    queryFn: getSummerSale,
+  });
+  console.log("trending", data);
+  useEffect(() => {
+    if (isError) {
+      toast.error(error?.message ?? "Something went wrong");
+    }
+  }, [isError, error]);
+
   return (
-    <div>
-      <ProductList title="Summer Sale" products={products} isLoading={false} />
+    <div className="py-12 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="mb-8 text-center">
+          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 max-w-lg mx-auto">
+            Discover our Summer sale products, handpicked for quality and style.
+          </p>
+        </div>
+        <ProductList
+          title="Summer Sale"
+          isLoading={isPending}
+          products={data?.data?.data ?? []}
+        />
+      </div>
     </div>
   );
 };
 
-export default SummerSale;
+export default TrendingProduct;
