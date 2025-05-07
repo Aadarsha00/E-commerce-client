@@ -20,18 +20,18 @@ export const getProductsById = async (id: string) => {
   }
 };
 
-export const getTrendingProduct = async (data: any) => {
+export const getTrendingProduct = async () => {
   try {
-    const response = await api.get("/product/trendingproducts", data);
+    const response = await api.get("/product/trending");
     return response.data;
   } catch (error: any) {
     throw error?.response?.data;
   }
 };
 
-export const getSummerSale = async (data: any) => {
+export const getSummerSale = async () => {
   try {
-    const response = await api.get("product/summersale", data);
+    const response = await api.get("/product/summersale");
     return response.data;
   } catch (error: any) {
     throw error?.response?.data;
